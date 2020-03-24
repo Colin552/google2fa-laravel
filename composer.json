@@ -1,13 +1,18 @@
 {
-    "name": "pragmarx/google2fa-laravel",
-    "description": "A One Time Password Authentication package, compatible with Google Authenticator.",
-    "keywords": ["authentication", "two factor authentication", "google2fa", "laravel"],
+    "name": "mobilexco/google2fa-laravel",
+    "description": "Fork of pragmarx/google2fa-laravel -- A One Time Password Authentication package, compatible with Google Authenticator.",
+    "keywords": ["authentication", "two factor authentication", "google2fa", "laravel", "mobilexco"],
     "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Antonio Carlos Ribeiro",
             "email": "acr@antoniocarlosribeiro.com",
             "role": "Creator & Designer"
+        },
+        {
+            "name": "Adam Goucher",
+            "email": "adam@mobilexco.com",
+            "role": "Forker"
         }
     ],
     "require": {
