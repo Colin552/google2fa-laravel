@@ -114,6 +114,15 @@ protected $routeMiddleware = [
 ];
 ```
 
+By default, the package treats 2FA as 'optional' as controlled by the user. So if they haven't configured it yet, they are not prompted for it. You can enforce that a user has been authenticated with 2FA in the config file (config/google2fa.php):
+
+``` php
+/*
+ * Always enforce ont time passwords when using package middleware
+ */
+'enforced' => env('OTP_ENFORCED', false),
+```
+
 ### Using it in one or more routes:
 
 ``` php

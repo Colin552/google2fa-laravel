@@ -117,11 +117,16 @@ class Authenticator extends Google2FA
      */
     protected function canPassWithoutCheckingOTP()
     {
-        return
-            !$this->isEnabled() ||
-            $this->noUserIsAuthenticated() ||
-            !$this->isActivated() ||
-            $this->twoFactorAuthStillValid();
+        if ($this->isEnabled()) {
+            if ($this->config('enforced')){
+                return $this->twoFactorAuthStillValid();// is the 2fa still valid
+            } else {
+                return
+                    $this->noUserIsAuthenticated() ||   // operating in the context of a user?
+                    !$this->isActivated() ||            // does the user have 2fa activated
+                    $this->twoFactorAuthStillValid();   // is the 2fa still valid
+            }
+        }
     }
 
     /**

@@ -8,6 +8,11 @@ return [
     'enabled' => env('OTP_ENABLED', true),
 
     /*
+     * Always enforce ont time passwords when using package middleware
+     */
+    'enforced' => env('OTP_ENFORCED', false),
+
+    /*
      * Lifetime in minutes.
      *
      * In case you need your users to be asked for a new one time passwords from time to time.
