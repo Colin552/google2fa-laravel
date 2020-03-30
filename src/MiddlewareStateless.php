@@ -11,6 +11,8 @@ class MiddlewareStateless
     {
         $authenticator = app(Authenticator::class)->bootStateless($request);
 
+        $request->session()->put('redirectTo', url()->current());
+
         if ($authenticator->isAuthenticated()) {
             return $next($request);
         }

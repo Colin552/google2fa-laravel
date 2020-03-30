@@ -11,6 +11,8 @@ class Middleware
     {
         $authenticator = app(Authenticator::class)->boot($request);
 
+        $request->session()->put('redirectTo', url()->current());
+
         if ($authenticator->isAuthenticated()) {
             return $next($request);
         }
